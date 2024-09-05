@@ -1,9 +1,6 @@
-import java.util.concurrent.Semaphore;
-
 public class Main {
   public static int numberOfPhilosophers = 5;
 
-  private static final Semaphore tableLimit = new Semaphore(Main.numberOfPhilosophers - 1);
   public static void main(String[] args) {
     Philosopher[] philosophers = new Philosopher[numberOfPhilosophers];
     Object[] forks = new Object[numberOfPhilosophers];
