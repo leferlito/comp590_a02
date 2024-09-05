@@ -1,7 +1,11 @@
+import java.util.concurrent.Semaphore;
+
 public class Philosopher extends Thread {
     private int id;
     private Object leftFork;
     private Object rightFork;
+
+    private static final Semaphore limit = new Semaphore(Main.numberOfPhilosophers - 1);
 
     public Philosopher(int id, Object leftFork, Object rightFork) {
         this.id = id;
@@ -24,7 +28,7 @@ public class Philosopher extends Thread {
         try {
             while (true) {
                 think();
-
+                limit.acquire();
                 if (id % 2 == 0) {
                     synchronized (leftFork) {
                         synchronized (rightFork) {
@@ -38,6 +42,7 @@ public class Philosopher extends Thread {
                         }
                     }
                 }
+                limit.release();
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

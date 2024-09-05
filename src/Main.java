@@ -1,6 +1,6 @@
 public class Main {
+  public static int numberOfPhilosophers = 5;
   public static void main(String[] args) {
-    int numberOfPhilosophers = 5;
     Philosopher[] philosophers = new Philosopher[numberOfPhilosophers];
     Object[] forks = new Object[numberOfPhilosophers];
 
