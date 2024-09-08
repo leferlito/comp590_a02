@@ -1,0 +1,97 @@
+semaphore
+
+Philosopher 0 spent a total of 56807 ms eating.
+Philosopher 0 waited a total of 39863 ms waiting to eat.
+Philosopher 1 ate 1011 times.
+Philosopher 1 spent a total of 54370 ms eating.
+Philosopher 1 waited a total of 45121 ms waiting to eat.
+Philosopher 2 ate 1014 times.
+Philosopher 2 spent a total of 52788 ms eating.
+Philosopher 2 waited a total of 45535 ms waiting to eat.
+Philosopher 3 ate 966 times.
+Philosopher 3 spent a total of 52514 ms eating.
+Philosopher 3 waited a total of 49844 ms waiting to eat.
+Philosopher 4 ate 944 times.
+Philosopher 4 spent a total of 49131 ms eating.
+Philosopher 4 waited a total of 54791 ms waiting to eat.
+
+Philosopher 0 ate 1070 times.
+Philosopher 0 spent a total of 57446 ms eating.
+Philosopher 0 waited a total of 38293 ms waiting to eat.
+Philosopher 1 ate 991 times.
+Philosopher 1 spent a total of 53808 ms eating.
+Philosopher 1 waited a total of 46772 ms waiting to eat.
+Philosopher 2 ate 1014 times.
+Philosopher 2 spent a total of 52933 ms eating.
+Philosopher 2 waited a total of 46558 ms waiting to eat.
+Philosopher 3 ate 988 times.
+Philosopher 3 spent a total of 51417 ms eating.
+Philosopher 3 waited a total of 50895 ms waiting to eat.
+Philosopher 4 ate 949 times.
+Philosopher 4 spent a total of 49825 ms eating.
+Philosopher 4 waited a total of 53024 ms waiting to eat.
+
+Philosopher 0 ate 1072 times.
+Philosopher 0 spent a total of 57418 ms eating.
+Philosopher 0 waited a total of 39207 ms waiting to eat.
+Philosopher 1 ate 1021 times.
+Philosopher 1 spent a total of 53810 ms eating.
+Philosopher 1 waited a total of 46369 ms waiting to eat.
+Philosopher 2 ate 1011 times.
+Philosopher 2 spent a total of 54881 ms eating.
+Philosopher 2 waited a total of 46679 ms waiting to eat.
+Philosopher 3 ate 966 times.
+Philosopher 3 spent a total of 50340 ms eating.
+Philosopher 3 waited a total of 51968 ms waiting to eat.
+Philosopher 4 ate 948 times.
+Philosopher 4 spent a total of 49654 ms eating.
+Philosopher 4 waited a total of 53424 ms waiting to eat.
+
+reentrant lock
+
+Philosopher 0 ate 1001 times.
+Philosopher 0 spent a total of 53489 ms eating.
+Philosopher 0 waited a total of 156751 ms waiting to eat.
+Philosopher 1 ate 993 times.
+Philosopher 1 spent a total of 52377 ms eating.
+Philosopher 1 waited a total of 157639 ms waiting to eat.
+Philosopher 2 ate 1001 times.
+Philosopher 2 spent a total of 51478 ms eating.
+Philosopher 2 waited a total of 158657 ms waiting to eat.
+Philosopher 3 ate 1002 times.
+Philosopher 3 spent a total of 52490 ms eating.
+Philosopher 3 waited a total of 157378 ms waiting to eat.
+Philosopher 4 ate 1009 times.
+Philosopher 4 spent a total of 52537 ms eating.
+Philosopher 4 waited a total of 158017 ms waiting to eat.
+
+Philosopher 0 ate 1003 times.
+Philosopher 0 spent a total of 54266 ms eating.
+Philosopher 0 waited a total of 160068 ms waiting to eat.
+Philosopher 1 ate 999 times.
+Philosopher 1 spent a total of 52748 ms eating.
+Philosopher 1 waited a total of 161324 ms waiting to eat.
+Philosopher 2 ate 1005 times.
+Philosopher 2 spent a total of 53270 ms eating.
+Philosopher 2 waited a total of 159802 ms waiting to eat.
+Philosopher 3 ate 1000 times.
+Philosopher 3 spent a total of 53949 ms eating.
+Philosopher 3 waited a total of 160731 ms waiting to eat.
+Philosopher 4 ate 993 times.
+Philosopher 4 spent a total of 52366 ms eating.
+Philosopher 4 waited a total of 159358 ms waiting to eat.
+
+Philosopher 0 spent a total of 52975 ms eating.
+Philosopher 0 waited a total of 160293 ms waiting to eat.
+Philosopher 1 ate 993 times.
+Philosopher 1 spent a total of 53205 ms eating.
+Philosopher 1 waited a total of 159695 ms waiting to eat.
+Philosopher 2 ate 994 times.
+Philosopher 2 spent a total of 53857 ms eating.
+Philosopher 2 waited a total of 158334 ms waiting to eat.
+Philosopher 3 ate 995 times.
+Philosopher 3 spent a total of 53308 ms eating.
+Philosopher 3 waited a total of 160227 ms waiting to eat.
+Philosopher 4 ate 1004 times.
+Philosopher 4 spent a total of 52427 ms eating.
+Philosopher 4 waited a total of 160645 ms waiting to eat.
