@@ -1,24 +1,21 @@
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Philosopher extends Thread {
     private int id;
     private Object leftFork;
     private Object rightFork;
-    private Semaphore semaphore;
-    // private ReentrantLock lock;
+    private ReentrantLock lock;
 
     // Tracking statistics to print at termination
     private int eatCount = 0;
     private long totalEatTime = 0;
     private long totalWaitTime = 0;
 
-    public Philosopher(int id, Object leftFork, Object rightFork, Semaphore semaphore, ReentrantLock lock) {
+    public Philosopher(int id, Object leftFork, Object rightFork, ReentrantLock lock) {
         this.id = id;
         this.leftFork = leftFork;
         this.rightFork = rightFork;
-        this.semaphore = semaphore;
-        // this.lock = lock;
+        this.lock = lock;
     }
 
     private void think() throws InterruptedException {
@@ -47,9 +44,8 @@ public class Philosopher extends Thread {
                 // Measure wait time before eating
                 long waitStartTime = System.currentTimeMillis();
 
-                // Limit the number of philosophers trying to pick up forks to n-1 to prevent deadlock aid fairness
-                semaphore.acquire();
-                // lock.lock();
+                // Use a reentrant lock as a mutex so that only one thread can access critical code at a time
+                lock.lock();
                 try {
                     // Even-numbered philosophers pick up the left fork first, odd-numbered the right
                     // Prevents deadlock because all of them will never pick up the same fork at the same time
@@ -73,9 +69,8 @@ public class Philosopher extends Thread {
                         }
                     }
                 } finally {
-                    // lock.unlock();
-                    // Release the semaphore after eating, so other philosophers can pick up the forks
-                    semaphore.release();
+                    // Release the lock after eating, so other philosophers can pick up the forks
+                    lock.unlock();
                 }
             }
         } catch (InterruptedException e) {
