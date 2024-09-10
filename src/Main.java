@@ -1,10 +1,9 @@
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Main {
   public static int numberOfPhilosophers = 5;
+  // Semaphore limits the amount of philosophers grabbing for forks to n - 1
   public static Semaphore semaphore = new Semaphore(numberOfPhilosophers - 1);
-  public static ReentrantLock lock = new ReentrantLock(true);
 
   public static void main(String[] args) {
     Philosopher[] philosophers = new Philosopher[numberOfPhilosophers];
@@ -20,7 +19,7 @@ public class Main {
       Object leftFork = forks[i];
       Object rightFork = forks[(i + 1) % numberOfPhilosophers];
 
-      philosophers[i] = new Philosopher(i, leftFork, rightFork, semaphore, lock);
+      philosophers[i] = new Philosopher(i, leftFork, rightFork, semaphore);
       philosophers[i].start();
     }
 

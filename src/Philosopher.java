@@ -1,24 +1,21 @@
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Philosopher extends Thread {
     private int id;
     private Object leftFork;
     private Object rightFork;
     private Semaphore semaphore;
-    // private ReentrantLock lock;
 
     // Tracking statistics to print at termination
     private int eatCount = 0;
     private long totalEatTime = 0;
     private long totalWaitTime = 0;
 
-    public Philosopher(int id, Object leftFork, Object rightFork, Semaphore semaphore, ReentrantLock lock) {
+    public Philosopher(int id, Object leftFork, Object rightFork, Semaphore semaphore) {
         this.id = id;
         this.leftFork = leftFork;
         this.rightFork = rightFork;
         this.semaphore = semaphore;
-        // this.lock = lock;
     }
 
     private void think() throws InterruptedException {
@@ -44,19 +41,18 @@ public class Philosopher extends Thread {
             while (true) {
                 think();
 
-                // Measure wait time before eating
+                // Measure wait time
                 long waitStartTime = System.currentTimeMillis();
 
-                // Limit the number of philosophers trying to pick up forks to n-1 to prevent deadlock aid fairness
+                // Semaphore limits the number of philosophers trying to pick up forks to n-1 to prevent deadlock aid fairness
                 semaphore.acquire();
-                // lock.lock();
                 try {
                     // Even-numbered philosophers pick up the left fork first, odd-numbered the right
-                    // Prevents deadlock because all of them will never pick up the same fork at the same time
+                    // Prevents deadlock because all of them will never pick up the same side of fork at the same time
                     if (id % 2 == 0) {
                         synchronized (leftFork) {
                             synchronized (rightFork) {
-                                // Wait time ends here before eating
+                                // Wait time ends here before eating and calculate total wait time
                                 long waitEndTime = System.currentTimeMillis();
                                 totalWaitTime += (waitEndTime - waitStartTime);
                                 eat();
@@ -65,7 +61,7 @@ public class Philosopher extends Thread {
                     } else {
                         synchronized (rightFork) {
                             synchronized (leftFork) {
-                                // Wait time ends here before eating
+                                // Wait time ends here before eating and calculate total wait time
                                 long waitEndTime = System.currentTimeMillis();
                                 totalWaitTime += (waitEndTime - waitStartTime);
                                 eat();
@@ -73,8 +69,7 @@ public class Philosopher extends Thread {
                         }
                     }
                 } finally {
-                    // lock.unlock();
-                    // Release the semaphore after eating, so other philosophers can pick up the forks
+                    // Release the semaphore after eating, so new philosophers can pick up the forks
                     semaphore.release();
                 }
             }
